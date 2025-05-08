@@ -6,7 +6,7 @@ git add
 git status
 git add -m
 git restore -m
-
+git --oneline
 git 
 ## Clase 3 
 ## Auntes extra
