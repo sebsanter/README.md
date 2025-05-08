@@ -10,6 +10,10 @@ git restore -m
 git 
 ## Clase 3 
 ## Auntes extra
+git checkout nombredelcommit ->mueve el HEAD
+git branch -f main <commit-hash> -> mueve el main 
+
+
 git switch -c nombredelarama ->crea y te mueve a la rama creada 
 git pull origin main ->actualiza el repositorio local con el de github
 git clone aqui-poner-la-url-que-te-da-github-cuando-le-das-a-code-del-repositoriocompartido
