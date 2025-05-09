@@ -1,19 +1,26 @@
-# REPOSITORIO
-## Clase 1
-git init
-## Clase 2
-git add
-git status
-git add -m
-git restore -m
-git --oneline
-git 
-## Clase 3 
-## Auntes extra
-git checkout nombredelcommit ->mueve el HEAD
-git branch -f main <commit-hash> -> mueve el main 
+# REPOSITORIO DE GIT – Prácticas y Comandos Básicos
 
+Este repositorio contiene el material trabajado durante la cursada relacionado al uso de **Git**, incluyendo comandos básicos, ejercicios prácticos y conceptos clave para el control de versiones.
 
-git switch -c nombredelarama ->crea y te mueve a la rama creada 
-git pull origin main ->actualiza el repositorio local con el de github
-git clone aqui-poner-la-url-que-te-da-github-cuando-le-das-a-code-del-repositoriocompartido
+## Tabla de contenidos
+
+- [Clase 1 – Introducción a Git y configuración inicial](#clase-1--introducción-a-git-y-configuración-inicial)
+- [Clase 2 – Repositorios locales y seguimiento de archivos](#clase-2--repositorios-locales-y-seguimiento-de-archivos)
+- [Clase 3 – Commits y estados de los archivos](#clase-3--commits-y-estados-de-los-archivos)
+- [Clase 4 – Repositorios remotos y GitHub](#clase-4--repositorios-remotos-y-github)
+- [Clase 5 – Branches y merge](#clase-5--branches-y-merge)
+- [Clase 6 – Conflictos y resolución](#clase-6--conflictos-y-resolución)
+- [Clase 7 – Proyecto integrador con Git](#clase-7--proyecto-integrador-con-git)
+
+---
+
+## Clase 1 – Introducción a Git y configuración inicial
+
+- ¿Qué es Git?
+- Ventajas del control de versiones
+- Instalación de Git
+- Configuración básica:
+
+```bash
+git config --global user.name "Tu Nombre"
+git config --global user.email "tucorreo@example.com"
