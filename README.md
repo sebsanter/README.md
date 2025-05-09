@@ -1,26 +1,23 @@
 # REPOSITORIO DE GIT – Prácticas y Comandos Básicos
+## 📘 Clase 1: Inicialización de un repositorio
 
-Este repositorio contiene el material trabajado durante la cursada relacionado al uso de **Git**, incluyendo comandos básicos, ejercicios prácticos y conceptos clave para el control de versiones.
-
-## Tabla de contenidos
-
-- [Clase 1 – Introducción a Git y configuración inicial](#clase-1--introducción-a-git-y-configuración-inicial)
-- [Clase 2 – Repositorios locales y seguimiento de archivos](#clase-2--repositorios-locales-y-seguimiento-de-archivos)
-- [Clase 3 – Commits y estados de los archivos](#clase-3--commits-y-estados-de-los-archivos)
-- [Clase 4 – Repositorios remotos y GitHub](#clase-4--repositorios-remotos-y-github)
-- [Clase 5 – Branches y merge](#clase-5--branches-y-merge)
-- [Clase 6 – Conflictos y resolución](#clase-6--conflictos-y-resolución)
-- [Clase 7 – Proyecto integrador con Git](#clase-7--proyecto-integrador-con-git)
+- `git init`: Inicializa un nuevo repositorio Git en el directorio actual.
 
 ---
 
-## Clase 1 – Introducción a Git y configuración inicial
+## 📘 Clase 2: Estados, commits y navegación
 
-- ¿Qué es Git?
-- Ventajas del control de versiones
-- Instalación de Git
-- Configuración básica:
-
-```bash
-git config --global user.name "Tu Nombre"
-git config --global user.email "tucorreo@example.com"
+- `git status`: Verifica el estado actual del repositorio.
+- `git add <archivo>`: Añade archivos al área de staging.
+- `git commit`: Realiza un commit.
+- `git commit -m "mensaje"`: Commit con mensaje en línea.
+- `git restore --staged <archivo>`: Revierte el archivo del área de staging.
+- `git add .`: Añade todos los archivos al staging.
+- `git log`: Muestra el historial de commits.
+- `git log --help`: Ayuda del comando log.
+- `git log --oneline`: Historial reducido en una sola línea por commit.
+- `git commit --amend -m "nuevo mensaje"`: Modifica el mensaje del último commit.
+- `git checkout <rama|SHA>`: Cambia de rama o revisa un commit antiguo.
+- `git switch <rama>`: Alternativa moderna a `checkout` para cambiar de rama.
+- `git branch`: Lista ramas.
+- `git switch -c <nueva-rama>`: Crea y cambia a una nueva rama.
