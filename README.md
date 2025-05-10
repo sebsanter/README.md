@@ -35,3 +35,21 @@
 - `git diff`: Muestra diferencias entre archivos.
 
 ---
+## 📘 Clase 4: GitHub y trabajo remoto
+
+- `git remote add origin <url>`: Vincula el repositorio local con GitHub.
+- `git config list`: Muestra la configuración actual.
+- `git clone <url>`: Clona un repositorio remoto.
+- `git push origin <rama>`: Empuja cambios a la rama remota.
+- `git remote prune origin`: Limpia referencias remotas obsoletas.
+- `git remote -v`: Muestra los remotos conectados.
+- `git pull`: Trae y fusiona cambios del remoto.
+- `git fetch`: Trae cambios del remoto sin fusionarlos.
+- `git push -u`: Establece upstream para la rama.
+- `git push -f`: Fuerza un push.
+- `git push --all`: Empuja todas las ramas.
+- `git push <rama1> <rama2>`: Empuja múltiples ramas.
+- `git push -u origin <rama>`: Establece rama y empuja.
+- ¿Qué es un Pull Request?: Solicitud para fusionar cambios a otra rama (usualmente en GitHub).
+
+---
