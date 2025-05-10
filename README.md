@@ -1,4 +1,14 @@
 # REPOSITORIO DE GIT – Prácticas y Comandos Básicos
+## Conceptos Importantes
+### Repositorio
+Se puede ver como una carpeta donde se guarda lo que se necesite , en este caso apuntes
+### Commits
+Checkpoint
+### Rama
+Es un entorno que no afecta el el main(rama principal) a menos que se lo permitamos 
+### Merge
+Combina ramas y las añade al main pero hay riesgo de conflictos especialemente por no ser iguales cosa que pasa casi siempre 
+
 ## 📘 Clase 1: Inicialización de un repositorio
 
 - `git init`: Inicializa un nuevo repositorio Git en el directorio actual.
@@ -10,15 +20,15 @@
 - `git status`: Verifica el estado actual del repositorio.
 - `git add <archivo>`: Añade archivos al área de staging.
 - `git commit`: Realiza un commit.
-- `git commit -m "mensaje"`: Commit con mensaje en línea.
+- `git commit -m "mensaje"`: Commit con mensaje en línea.(crea un commit con un nombre elegido desde la terminal)
 - `git restore --staged <archivo>`: Revierte el archivo del área de staging.
 - `git add .`: Añade todos los archivos al staging.
 - `git log`: Muestra el historial de commits.
 - `git log --help`: Ayuda del comando log.
 - `git log --oneline`: Historial reducido en una sola línea por commit.
-- `git commit --amend -m "nuevo mensaje"`: Modifica el mensaje del último commit.
+- `git commit --amend -m "nuevo mensaje"`: Modifica el mensaje del último commit.(cambia el nombre del commit)
 - `git checkout <rama|SHA>`: Cambia de rama o revisa un commit antiguo.
-- `git switch <rama>`: Alternativa moderna a `checkout` para cambiar de rama.
+- `git switch <rama>`: Alternativa moderna a `checkout` para cambiar de rama.(cambia a
 - `git branch`: Lista ramas.
 - `git switch -c <nueva-rama>`: Crea y cambia a una nueva rama.
 ---
@@ -39,8 +49,8 @@
 
 - `git remote add origin <url>`: Vincula el repositorio local con GitHub.
 - `git config list`: Muestra la configuración actual.
-- `git clone <url>`: Clona un repositorio remoto.
-- `git push origin <rama>`: Empuja cambios a la rama remota.
+- `git clone <url>`: Clona un repositorio remoto.(esto se usa para hacer ediciones en el clonado y luego subirlas recien a github)
+- `git push origin <rama>`: Empuja cambios a la rama remota.(sube la rama local a github)
 - `git remote prune origin`: Limpia referencias remotas obsoletas.
 - `git remote -v`: Muestra los remotos conectados.
 - `git pull`: Trae y fusiona cambios del remoto.
@@ -50,17 +60,17 @@
 - `git push --all`: Empuja todas las ramas.
 - `git push <rama1> <rama2>`: Empuja múltiples ramas.
 - `git push -u origin <rama>`: Establece rama y empuja.
-- ¿Qué es un Pull Request?: Solicitud para fusionar cambios a otra rama (usualmente en GitHub).
+- ¿Qué es un Pull Request?: Solicitud para fusionar cambios a otra rama (GitHub).
 
 ---
 ## 📘 Clase 5: Flujos de trabajo con ramas
 
 - **Gitflow**:
-  - `main`, `develop`, `feature`, `release`, `hotfix`
+  - `main`(versiones), `develop`(codigo a probar y valiar), `feature`(caracteristicas nuevas), `release`(solo para emergencia), `hotfix`(parches
 - **Otros flujos**:
-  - GitHub Flow
-  - Trunk Based Development
-  - Ship Show Ask
+  - GitHub Flow ( la mayoria de ramas salen del main y para mergearlas se usa la pull request)
+  - Trunk Based Development(de acuerdo a lo investigado por mi es basicamente lo mismo que lo de arriba pero los commits son temporales y ya )
+  - Ship Show Ask(Se fusiona en la rama principal sin revisión.-Abre una petición de cambios para que sean revisados por CI pero se fusiona inmediatamente-Abre una PR para discutir los cambios antes de fusionarlos).
 
 ---
 
@@ -86,10 +96,36 @@
 
 - **Hooks**:
   - ¿Qué es un hook?
+    ejecutar una acción o script cada vez que ocurre un evento determinado de Git
   - Hooks del lado del cliente y del servidor.
+    DEL CLIENTE
+    se ejecutan solo en el repositorio local. Sirven para automatizar tareas o validaciones antes o después de ciertas acciones.
+
+pre-commit: Se ejecuta antes de un commit. Útil para validar código o evitar commits con demasiados archivos.
+
+prepare-commit-msg: Modifica o complementa el mensaje del commit antes de escribirlo.
+
+commit-msg: Verifica el mensaje del commit una vez escrito (ideal para validar su formato).
+
+post-commit: Corre después del commit. Útil para notificaciones (como enviar un mensaje a Slack).
+
+pre-push: Se ejecuta antes de un push. Ideal para correr tests o verificaciones automáticas.
+
+post-checkout y post-merge: Se usan para limpiar archivos temporales o ramas que ya no se usan después de cambiar de rama o hacer un merge.
   - Creación de hooks personalizados.
+    DEL SERVIDOR
+    Estos hooks se ejecutan en el repositorio remoto y permiten controlar lo que se acepta o se ejecuta al interactuar con él.
+
+pre-receive: Se ejecuta antes de aceptar cambios. Sirve para validar commits y permisos del usuario que hace push.
+
+update: Controla si se permite actualizar referencias (como ramas) de forma más específica. Útil para reglas avanzadas.
+
+post-receive: Se ejecuta después de recibir los cambios. Se puede usar para enviar notificaciones por correo o actualizar interfaces gráficas con las nuevas ramas o commits.
+
+
 
 - **Alias**:
+es literalmente un "apodo por asi decirlo" para un comando , esto es para no estar escribiendo comandos largos sino simplificarlos como deseemos
   - `git config --global alias.co "checkout"`
   - `git config --global alias.st "status"`
 
@@ -111,14 +147,3 @@
   - `git commit --amend -m "<nuevo mensaje>"`: Cambia el último mensaje.
   - `git checkout <SHA> <archivo>`: Recupera un archivo desde un commit específico.
 
----
-
-## 📝 Apuntes Extra
-
-- 💡 **Usar `git switch` en lugar de `checkout`** para cambiar de rama mejora la legibilidad.
-- 🚨 **Evita usar `--force` (`-f`) en `push` a menos que sepas lo que estás haciendo**.
-- 🧹 **`git stash` es ideal para guardar cambios temporales antes de hacer un pull o cambiar de rama**.
-- 🔍 **`git bisect` es muy útil para encontrar el commit exacto que introdujo un bug**.
-- 📄 **Siempre escribe mensajes de commit en infinitivo (e.g. `Agrega formulario`, `Corrige errores`)**.
-- 🧭 **Crear ramas con prefijos como `feature/`, `fix/`, `hotfix/` mejora la organización**.
-- 📌 **Si cometiste un error en tu último commit (mensaje o contenido), `git commit --amend` puede salvarte**.
