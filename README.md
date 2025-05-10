@@ -53,3 +53,20 @@
 - ¿Qué es un Pull Request?: Solicitud para fusionar cambios a otra rama (usualmente en GitHub).
 
 ---
+## 📘 Clase 5: Flujos de trabajo con ramas
+
+- **Gitflow**:
+  - `main`, `develop`, `feature`, `release`, `hotfix`
+- **Otros flujos**:
+  - GitHub Flow
+  - Trunk Based Development
+  - Ship Show Ask
+
+---
+
+## 📘 Clase 6: Buenas prácticas en Git
+
+- Hacer commits con frecuencia lógica (al completar partes funcionales).
+- Escribir mensajes de commit claros y concisos.
+- Prefijos útiles para commits: `feat:`, `fix:`, `docs:`, `refactor:`, `style:`, etc.
+- Nombrar ramas de forma descriptiva y coherente.
