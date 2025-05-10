@@ -70,3 +70,55 @@
 - Escribir mensajes de commit claros y concisos.
 - Prefijos útiles para commits: `feat:`, `fix:`, `docs:`, `refactor:`, `style:`, etc.
 - Nombrar ramas de forma descriptiva y coherente.
+---
+
+## 📘 Clase 7: Reescritura de historial y navegación avanzada
+
+- `git reset --soft <SHA>`: Resetea manteniendo los cambios en staging.
+- `git reset --hard <SHA>`: Resetea completamente al commit dado.
+- `git reset --soft|hard HEAD~<N>`: Resetea a N commits atrás.
+- `git checkout HEAD~<N>`: Navega a N commits atrás.
+- `git checkout <SHA>`: Revisa un commit por su hash.
+
+---
+
+## 📘 Clase 8: Hooks, alias y herramientas avanzadas
+
+- **Hooks**:
+  - ¿Qué es un hook?
+  - Hooks del lado del cliente y del servidor.
+  - Creación de hooks personalizados.
+
+- **Alias**:
+  - `git config --global alias.co "checkout"`
+  - `git config --global alias.st "status"`
+
+- **Stash**:
+  - `git stash`: Guarda cambios temporales.
+  - `git stash -u`: Incluye archivos no trackeados.
+  - `git stash pop`: Aplica y elimina el stash.
+
+- **Cherry-pick**:
+  - `git cherry-pick <SHA>`: Aplica un commit específico.
+
+- **Bisect**:
+  - `git bisect start`: Inicia búsqueda binaria de bugs.
+  - `git bisect good`: Marca un commit como funcional.
+  - `git bisect bad`: Marca un commit como con errores.
+  - `git bisect reset`: Finaliza el proceso.
+
+- Otros:
+  - `git commit --amend -m "<nuevo mensaje>"`: Cambia el último mensaje.
+  - `git checkout <SHA> <archivo>`: Recupera un archivo desde un commit específico.
+
+---
+
+## 📝 Apuntes Extra
+
+- 💡 **Usar `git switch` en lugar de `checkout`** para cambiar de rama mejora la legibilidad.
+- 🚨 **Evita usar `--force` (`-f`) en `push` a menos que sepas lo que estás haciendo**.
+- 🧹 **`git stash` es ideal para guardar cambios temporales antes de hacer un pull o cambiar de rama**.
+- 🔍 **`git bisect` es muy útil para encontrar el commit exacto que introdujo un bug**.
+- 📄 **Siempre escribe mensajes de commit en infinitivo (e.g. `Agrega formulario`, `Corrige errores`)**.
+- 🧭 **Crear ramas con prefijos como `feature/`, `fix/`, `hotfix/` mejora la organización**.
+- 📌 **Si cometiste un error en tu último commit (mensaje o contenido), `git commit --amend` puede salvarte**.
