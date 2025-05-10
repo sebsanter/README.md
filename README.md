@@ -21,3 +21,17 @@
 - `git switch <rama>`: Alternativa moderna a `checkout` para cambiar de rama.
 - `git branch`: Lista ramas.
 - `git switch -c <nueva-rama>`: Crea y cambia a una nueva rama.
+---
+
+## 📘 Clase 3: Fusión de ramas y revisión de cambios
+
+- `git merge --edit`: Permite editar mensaje de merge.
+- `git merge --no-commit`: Realiza el merge sin hacer commit automático.
+- `git branch -d <rama>`: Elimina una rama (si fue mergeada).
+- `git branch -D <rama>`: Elimina una rama forzadamente.
+- `git branch -a`: Lista todas las ramas locales y remotas.
+- `git merge --no-ff`: Merge con commit explícito.
+- `git reset --hard`: Resetea el repositorio a un estado anterior, eliminando cambios.
+- `git diff`: Muestra diferencias entre archivos.
+
+---
